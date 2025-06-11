@@ -6,7 +6,7 @@ import cv2
 
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split,GridSearchCV
+from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score
 from sklearn.metrics import classification_report,confusion_matrix
 from sklearn.datasets import fetch_lfw_people
 
@@ -124,5 +124,45 @@ print("Vt:", Vt.shape)
 np.save("svd_U.npy", U)
 np.save("svd_S.npy", S)
 np.save("svd_Vt.npy", Vt)
+
+# Part 2 : Feature Engineering with PCA 
+
+# 1. Principal component analysis ( PCA )
+
+# Range of PCA components to test
+components_range = [20, 40, 60, 80, 100, 120, 150, 200]
+
+# Store average cross-validation scores
+mean_scores = []
+
+for n_components in components_range:
+    print(f"Testing PCA with {n_components} components...")
+
+    # Step 1: Apply PCA
+    pca = PCA(n_components=n_components, svd_solver='randomized', whiten=True)
+    X_pca = pca.fit_transform(X_labelled)
+
+    # Step 2: Train and evaluate SVM using cross-validation
+    svm = SVC(kernel='rbf', C=1, gamma='scale')  # Keep SVM config fixed here
+    scores = cross_val_score(svm, X_pca, y_labelled, cv=5, scoring='accuracy')
+    mean_accuracy = scores.mean()
+    mean_scores.append(mean_accuracy)
+
+    print(f"Accuracy with {n_components} components: {mean_accuracy:.4f}")
+
+# Plotting
+plt.figure(figsize=(10, 5))
+plt.plot(components_range, mean_scores, marker='o')
+plt.xlabel("Number of PCA Components")
+plt.ylabel("Cross-Validated Accuracy")
+plt.title("PCA Components vs SVM Performance")
+plt.grid(True)
+plt.show()
+
+# Best performing configuration
+best_n = components_range[np.argmax(mean_scores)]
+best_score = max(mean_scores)
+print(f"\nBest number of components: {best_n} with accuracy {best_score:.4f}")
+
 
 
