@@ -245,7 +245,7 @@ y = y_labelled
 
 # split into training and testing sets (70/30) , stratified
 
-X_train , X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,stratify=True,random_state=42)
+X_train , X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,stratify=y,random_state=42)
 
 # run the grid search on training data only
 svm_eval = SVC()

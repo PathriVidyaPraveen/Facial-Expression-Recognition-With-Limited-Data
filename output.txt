@@ -1,0 +1,446 @@
+Performing SVD!!
+SVD completed!
+Shapes:
+U: (13233, 4096)
+S: (4096,)
+Vt: (4096, 4096)
+Testing PCA with 20 components...
+Accuracy with 20 components: 0.7924
+Testing PCA with 40 components...
+Accuracy with 40 components: 0.7750
+Testing PCA with 60 components...
+Accuracy with 60 components: 0.7859
+Testing PCA with 80 components...
+Accuracy with 80 components: 0.7891
+Testing PCA with 100 components...
+Accuracy with 100 components: 0.7902
+Testing PCA with 120 components...
+Accuracy with 120 components: 0.7815
+Testing PCA with 150 components...
+Accuracy with 150 components: 0.7500
+Testing PCA with 200 components...
+Accuracy with 200 components: 0.7217
+
+Best number of components: 20 with accuracy 0.7924
+Fitting 5 folds for each of 36 candidates, totalling 180 fits
+/usr/lib/python3/dist-packages/sklearn/metrics/_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/lib/python3/dist-packages/sklearn/metrics/_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/lib/python3/dist-packages/sklearn/metrics/_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/lib/python3/dist-packages/sklearn/metrics/_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/lib/python3/dist-packages/sklearn/metrics/_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/lib/python3/dist-packages/sklearn/metrics/_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Best Parameters:
+{'C': 1, 'degree': 2, 'gamma': 'scale', 'kernel': 'linear'}
+Best Cross-Validation Accuracy:
+0.7771739130434783
+Classification Report on Training Data:
+              precision    recall  f1-score   support
+
+       Anger       0.50      0.31      0.38        45
+    Contempt       0.00      0.00      0.00        18
+     Disgust       0.79      0.56      0.65        59
+        Fear       0.82      0.36      0.50        25
+   Happiness       0.97      0.91      0.94        69
+     Neutral       0.83      0.98      0.90       593
+     Sadness       0.00      0.00      0.00        28
+    Surprise       0.97      0.87      0.92        83
+
+    accuracy                           0.84       920
+   macro avg       0.61      0.50      0.54       920
+weighted avg       0.80      0.84      0.81       920
+
+Confusion Matrix:
+[[ 14   0   2   0   0  29   0   0]
+ [  1   0   1   0   0  16   0   0]
+ [  3   0  33   1   2  20   0   0]
+ [  0   0   2   9   0  14   0   0]
+ [  0   0   1   1  63   4   0   0]
+ [  4   1   3   0   0 583   0   2]
+ [  6   0   0   0   0  22   0   0]
+ [  0   0   0   0   0  11   0  72]]
+Fitting 5 folds for each of 36 candidates, totalling 180 fits
+Using best params on test set evaluation:
+{'C': 1, 'degree': 2, 'gamma': 'scale', 'kernel': 'linear'}
+Test Accuracy: 0.7754
+Classification Report:
+              precision    recall  f1-score   support
+
+       Anger       0.40      0.15      0.22        13
+    Contempt       0.00      0.00      0.00         5
+     Disgust       0.55      0.61      0.58        18
+        Fear       0.00      0.00      0.00         8
+   Happiness       0.87      0.62      0.72        21
+     Neutral       0.80      0.97      0.88       178
+     Sadness       0.00      0.00      0.00         8
+    Surprise       0.89      0.64      0.74        25
+
+    accuracy                           0.78       276
+   macro avg       0.44      0.37      0.39       276
+weighted avg       0.72      0.78      0.74       276
+
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.1s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.2s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.1s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.2s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.1s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.2s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.1s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.1s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.2s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.1s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.2s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=10, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.1s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.1s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..........C=1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ........C=0.1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .........C=0.1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END ............C=0.1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=0.1, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END .........C=10, degree=3, gamma=scale, kernel=linear; total time=   0.2s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ........C=0.1, degree=3, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.0s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=10, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ..........C=1, degree=2, gamma=scale, kernel=linear; total time=   0.1s
+[CV] END ...........C=1, degree=2, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END .............C=1, degree=3, gamma=scale, kernel=rbf; total time=   0.1s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=3, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ...........C=0.1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=0.1, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=3, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=3, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ..........C=0.1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END ............C=1, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=1, degree=3, gamma=auto, kernel=linear; total time=   0.1s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.1s
+[CV] END ............C=10, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.2s
+[CV] END .........C=0.1, degree=2, gamma=auto, kernel=linear; total time=   0.0s
+[CV] END ...........C=0.1, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..............C=1, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END .............C=1, degree=2, gamma=auto, kernel=poly; total time=   0.0s
+[CV] END ...........C=10, degree=2, gamma=scale, kernel=poly; total time=   0.0s
+[CV] END .............C=10, degree=2, gamma=auto, kernel=rbf; total time=   0.0s
+[CV] END ............C=10, degree=3, gamma=scale, kernel=rbf; total time=   0.0s
+[CV] END ..........C=10, degree=3, gamma=auto, kernel=linear; total time=   0.1s

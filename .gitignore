@@ -1,1 +1,5 @@
 datasets
+svd_U.npy
+svd_Vt.npy
+X_unlabelled.npy
+X_labelled.npy
