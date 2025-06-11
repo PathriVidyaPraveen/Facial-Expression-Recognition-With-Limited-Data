@@ -108,3 +108,21 @@ for idx, image in enumerate(unlabelled_images):
 X_unlabelled = np.array(X_unlabelled)
 np.save("X_unlabelled.npy",X_unlabelled)
 
+
+# SVD for unlabelled data exploration
+
+print("Performing SVD!!")
+
+U,S,Vt = np.linalg.svd(X_unlabelled,full_matrices=True)
+print("SVD completed!")
+print("Shapes:")
+print("U:", U.shape)     
+print("S:", S.shape)     
+print("Vt:", Vt.shape)   
+
+# Save the matrices obtained in SVD for reuse
+np.save("svd_U.npy", U)
+np.save("svd_S.npy", S)
+np.save("svd_Vt.npy", Vt)
+
+
