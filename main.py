@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import cv2
-
+from mpl_toolkits.mplot3d import Axes3D
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score
+from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score,accuracy_score
 from sklearn.metrics import classification_report,confusion_matrix
 from sklearn.datasets import fetch_lfw_people
 
@@ -46,9 +46,28 @@ def preprocess_image(image, size=(64, 64)):
 
 # Labelled dataset 
 
-emotion_map = {
+# Emotions are defined as determined index below:
 
+# 0 : Anger (45 samples)
+# 1 : Disgust (59 samples)
+# 2 : Fear (25 samples)
+# 3 : Happiness (69 samples)
+# 4 : Sadness (28 samples)
+# 5 : Surprise (83 samples)
+# 6 : Neutral (593 samples)
+# 7 : Contempt (18 samples)
+
+emotion_map = {
+    0 : "Anger",
+    1 : "Disgust",
+    2 : "Fear",
+    3 : "Happiness",
+    4 : "Sadness",
+    5 : "Surprise",
+    6 : "Neutral",
+    7 : "Contempt"
 }
+
 
 labelled = pd.read_csv("labelled_dataset_ck+.csv")
 X_labelled = []
@@ -57,6 +76,7 @@ y_labelled = []
 for index,row in labelled.iterrows():
     pixel_string = row["pixels"].strip()
     emotion = int(row["emotion"])
+    emotion = emotion_map[emotion]
 
     pixel_list = [int(a) for a in pixel_string.split()]
     pixels = np.array(pixel_list , dtype=np.uint8)
@@ -113,7 +133,7 @@ np.save("X_unlabelled.npy",X_unlabelled)
 
 print("Performing SVD!!")
 
-U,S,Vt = np.linalg.svd(X_unlabelled,full_matrices=True)
+U,S,Vt = np.linalg.svd(X_unlabelled,full_matrices=False)
 print("SVD completed!")
 print("Shapes:")
 print("U:", U.shape)     
@@ -218,4 +238,71 @@ print(classification_report(y_labelled, y_pred))
 print("Confusion Matrix:")
 print(confusion_matrix(y_labelled, y_pred))
 
+# 2. Evaluation
+
+X = X_labelled_pca
+y = y_labelled
+
+# split into training and testing sets (70/30) , stratified
+
+X_train , X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,stratify=True,random_state=42)
+
+# run the grid search on training data only
+svm_eval = SVC()
+
+grid_search_eval = GridSearchCV(svm_eval , parameter_grid , cv=5 , scoring='accuracy' , verbose=2 , n_jobs=-1)
+
+grid_search_eval.fit(X_train,y_train)
+
+print("Using best params on test set evaluation:")
+print(grid_search_eval.best_params_)
+
+
+best_svm = SVC(**grid_search_eval.best_params_)
+
+best_svm.fit(X_train, y_train)
+
+# predict on test set
+y_pred = best_svm.predict(X_test)
+
+# accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Test Accuracy: {accuracy:.4f}")
+
+# precision , recall , f1 score
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+# confusion matrix
+conf_matrix = confusion_matrix(y_test, y_pred)
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues')
+plt.xlabel("Predicted Label")
+plt.ylabel("True Label")
+plt.title("Confusion Matrix")
+plt.show()
+
+# visualization if 2d or 3d after PCA
+
+if X.shape[1] == 2:
+    plt.figure(figsize=(8, 6))
+    scatter = plt.scatter(X[:, 0], X[:, 1], c=y, cmap='tab10', edgecolor='k')
+    plt.xlabel("PC 1")
+    plt.ylabel("PC 2")
+    plt.title("PCA Projection (2D)")
+    plt.legend(*scatter.legend_elements(), title="Classes")
+    plt.grid(True)
+    plt.show()
+
+elif X.shape[1] == 3:
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
+    scatter = ax.scatter(X[:, 0], X[:, 1], X[:, 2], c=y, cmap='tab10', edgecolor='k')
+    ax.set_xlabel("PC 1")
+    ax.set_ylabel("PC 2")
+    ax.set_zlabel("PC 3")
+    plt.title("PCA Projection (3D)")
+    plt.legend(*scatter.legend_elements(), title="Classes")
+    plt.show()
 
