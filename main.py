@@ -166,3 +166,20 @@ print(f"\nBest number of components: {best_n} with accuracy {best_score:.4f}")
 
 
 
+# 2 . Leveraging unlabelled data for PCA 
+
+# train PCA on unlabelled data
+
+pca = PCA(n_components=best_n , svd_solver='randomized' , whiten=True)
+pca.fit(X_unlabelled) # learn on general face space
+
+# transform labelled data using unlabelled pca
+
+X_labelled_pca = pca.transform(X_labelled)
+# save for reuse
+np.save("X_labelled_pca_from_unlabelled_basis.npy", X_labelled_pca)
+
+# Part 3 : SVM Classification and evaluation 
+
+# 1 . Training the SVM 
+
