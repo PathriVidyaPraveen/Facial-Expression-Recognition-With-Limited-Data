@@ -6,8 +6,8 @@ import cv2
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score,accuracy_score
-from sklearn.metrics import classification_report,confusion_matrix
+from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score
+from sklearn.metrics import classification_report,confusion_matrix,accuracy_score
 from sklearn.datasets import fetch_lfw_people
 
 # Part 1 : Data preprocessing and initial insights
