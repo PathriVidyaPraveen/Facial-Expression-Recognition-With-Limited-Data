@@ -183,3 +183,39 @@ np.save("X_labelled_pca_from_unlabelled_basis.npy", X_labelled_pca)
 
 # 1 . Training the SVM 
 
+# initialize SVC ie SVM classifier
+
+svm = SVC()
+
+# define parameter grid for hyperparameter tuning
+parameter_grid = {
+    'kernel': ['linear' , 'rbf' , 'poly'],
+    'C':[0.1,1,10],
+    'gamma': ['scale','auto'],
+    'degree':[2,3] 
+}
+
+# grid search with 5 fold cross validation
+
+grid_search = GridSearchCV(svm , parameter_grid , cv=5 , scoring='accuracy', verbose=2 , n_jobs=-1)
+
+# fit the model
+grid_search.fit(X_labelled_pca, y_labelled)
+
+# Print the best model and score
+print("Best Parameters:")
+print(grid_search.best_params_)
+
+print("Best Cross-Validation Accuracy:")
+print(grid_search.best_score_)
+
+# evaluate on full data
+y_pred = grid_search.predict(X_labelled_pca)
+
+print("Classification Report on Training Data:")
+print(classification_report(y_labelled, y_pred))
+
+print("Confusion Matrix:")
+print(confusion_matrix(y_labelled, y_pred))
+
+
